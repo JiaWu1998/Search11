@@ -21,6 +21,10 @@ $('#show-button').on('click', function(){
 $('#click-me').on('click', function(){
 	$('#search_page').fadeOut(1000);
 	$('#progress_page').delay(1000).fadeIn(1000);
+	$('#progress_page').delay(4000).fadeOut(1000);
+	$('#results_page').delay(4000).fadeIn(1000);
+});
+
 	// var progress = $('#progress_bar').value();
 	// // while(progress < 100) {
 	// // 	progress++;
@@ -31,16 +35,16 @@ $('#click-me').on('click', function(){
 
 
     //addOne();
-    var message = $("#search_bar_input").val();
-	chat += message;
-	database.ref('users/'+name).set({
-		chat: chat 
-	});
-	// database.ref().set({
-	// 	name: chat
-	// });
+//     var message = $("#search_bar_input").val();
+// 	chat += message;
+// 	database.ref('users/'+name).set({
+// 		chat: chat 
+// 	});
+// 	// database.ref().set({
+// 	// 	name: chat
+// 	// });
 
-});
+// });
 
 
 // function addOne() {
