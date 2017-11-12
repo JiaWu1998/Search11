@@ -1,0 +1,86 @@
+html body {
+	background: #2D2D2A;
+	color: #F2F7F2;
+	font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 1.5px;
+}
+
+h1 {
+	font-size: 35px;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 15px;
+}
+
+#search_page {
+	display: none;
+}
+
+#search_page_top_text {
+	height: 500px;
+	padding: 200px 0;
+	box-sizing: border-box;
+}
+
+#home_header {
+	background: white;
+	color: black;
+	padding: 10px;
+	font-size: 50px;
+}
+
+#home_login_body {
+	height: 500px;
+	position: relative;
+}
+
+#login_credentials {
+	background-color: #F4F4F6;
+	height: 100vh;
+}
+
+.large_input,
+.small_input  {
+	border: none;
+	border-bottom: solid 2px;
+	background: none;
+	font-size: 25px;
+	padding: 10px 0;
+}
+
+.small_input {
+	width: 50%;
+	border-bottom-color: #2D2D2A;
+}
+
+.large_input {
+	width: 80%;
+}
+
+input:focus {
+	outline: none;
+	caret-color: green;
+}
+
+.body_text {
+	text-align: center;
+}
