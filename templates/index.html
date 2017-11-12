@@ -3,13 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="714081559635-p3qdv6e7gubham21s2t2rvv9l2m8m56l.apps.googleusercontent.com">
 	<title>Search Eleven</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans|Oxygen|Raleway" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <body>
 	<div id="home_login_page" class="container-fluid">
 		<div id="home_header" class="row">
@@ -17,14 +19,14 @@
 				Search Eleven
 			</div>
 		</div>
-		<div id="home_login_body" class="row">
-			<div class="col-md-6 body_text">
+		<div id="home_login_body" class="row full_height">
+			<div class="col-md-6 body_text vertical_center">
 				<p>Lorem ipsum dolor sit amet, sea eloquentiam interpretaris eu. Congue iracundia id pro, legimus argumentum est te. Cu mel dicam verterem. Ne partem pericula pri, ut eam modo platonem patrioque. Ut singulis vituperatoribus sed, has in solum quando. </p>
 				<button id="show-button">Whats up</button>
 			</div>
 			<div id="login_credentials" class="col-md-6 body_text">
-				<input type="text" name="username" id="username" class="small_input" placeholder="Username" />
-				<input type="text" name="password" id="password" class="small_input" placeholder="Password" />
+				<input type="text" name="username" id="name" class="small_input" placeholder="First Name" />
+				<!-- <input type="text" name="password" id="password" class="small_input" placeholder="Password" /> -->
 			</div>
 		</div>
 	</div>
@@ -40,14 +42,25 @@
 						<input type="text" id="search_bar_input" class="large_input" placeholder="Keywords or phrases?" />
 					</div>
 					<div id="search_page_bottom_text" class="col-md-12 body_text">
-						<h3>Seperate different phrases with commas</h3>
+						<h3>Seperate different phrases with commas</h3><br />
+						<button id="click-me">Click Me</button>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-2"></div>
 		</div>
 	</div>
-
+	<div id="progress_page" class="container-fluid">
+		<div class="row full_height">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 vertical_center body_text">
+				<h3>Scanning your files for relevant information...</h3>
+				<progress id='progress_bar' value='0' max="100">
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+	
 	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
