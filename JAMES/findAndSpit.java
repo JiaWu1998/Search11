@@ -3,6 +3,14 @@ import java.util.Scanner;
 
 public class findAndSpit{
   public static void main(String[] args) throws IOException{
+    String dirName;
+
+    FileInputStream infoFile = new FileInputStream("scarlet.txt");
+    Scanner readInfo = new Scanner(infoFile);
+
+    while(readInfo.hasNext()){
+      dirName = readInfo.next();
+
     // replace keyword with the user input
     // We also need to make this non case sensitive
     String user_keyword = "Keyword".toLowerCase();
@@ -10,7 +18,7 @@ public class findAndSpit{
     double similarity = 0.0;
 
     // replace "locatedFile" with all listed .txt type file
-    FileInputStream txtFile = new FileInputStream("locatedFile.txt");
+    FileInputStream txtFile = new FileInputStream(dirName);
     Scanner read = new Scanner(txtFile);
 
     while(read.hasNext()){
@@ -50,4 +58,5 @@ System.out.println(keywordCount);
 
 
     }
+  }
   }
