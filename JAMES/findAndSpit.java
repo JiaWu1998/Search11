@@ -5,19 +5,27 @@ public class findAndSpit{
   public static void main(String[] args) throws IOException{
     String dirName;
 
-    FileInputStream infoFile = new FileInputStream("scarlet.txt");
+
+    FileInputStream infoFile = new FileInputStream("/Users/James/Documents/GitHub/Search11/JAMES/dirPage.txt");
     Scanner readInfo = new Scanner(infoFile);
 
-    while(readInfo.hasNext()){
-      dirName = readInfo.next();
+    int[] countKey = readInfo.
+
+    while(readInfo.hasNextLine()){
+      dirName = readInfo.nextLine();
+
+
+
+
 
     // replace keyword with the user input
     // We also need to make this non case sensitive
-    String user_keyword = "Keyword".toLowerCase();
+    String user_keyword = "world".toLowerCase();
     int keywordCount = 0;
     double similarity = 0.0;
 
     // replace "locatedFile" with all listed .txt type file
+
     FileInputStream txtFile = new FileInputStream(dirName);
     Scanner read = new Scanner(txtFile);
 
@@ -52,11 +60,12 @@ try{
 
       }
 
+
 System.out.println(keywordCount);
 
 
-
-
     }
-  }
+
+
+}
   }

@@ -3,10 +3,10 @@ import fnmatch
 import shutil
 
 
-new_write = 'c:/Users/Brian/Downloads/scarlet.txt'
+new_write = '/Users/James/Documents/GitHub/Search11/JAMES/dirPage.txt'
 f1 = open(new_write,'wb')
 images = ['*.txt']
-newpath = r'C:/Users/Brian/Documents/hack'
+newpath = r'/Users/James/Documents/hack'
 if not os.path.exists(newpath):
     os.makedirs(newpath)
 
@@ -17,13 +17,10 @@ def gen_move(filepat,top):
                 yield os.path.join(root, filename)
 
 if __name__ == '__main__':
-    src = 'C:/Users/Brian/Downloads'
-    dst = 'C:/Users/Brian/Documents/hack'
+    src = '/Users/James/Downloads'
+    dst = '/Users/James/Documents/hack'
     filesToMove = gen_move(images,src)
     for name in filesToMove:
             shutil.copy(name, dst)
             f1.write(name)
-            f1.write(' ')
-
-
-
+            f1.write('\n')
