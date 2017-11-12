@@ -1,15 +1,15 @@
-var fs = require('fs');
-var router = express.Router();
-var multer = require('multer');
-var upload = multer({dest: '../../assets/uploadedImages/'})
+// var fs = require('fs');
+// var router = express.Router();
+// var multer = require('multer');
+// var upload = multer({dest: '../../assets/uploadedImages/'})
 
-router.get("/", function(req, res, next) {
-	res.render('index', {title: 'Express'});
-})
+// router.get("/", function(req, res, next) {
+// 	res.render('index', {title: 'Express'});
+// })
 
-router.post('/', upload.any(),function(req, res, next) {
-	res.send(req.files);
-})
+// router.post('/', upload.any(),function(req, res, next) {
+// 	res.send(req.files);
+// })
 
 
 
@@ -55,9 +55,9 @@ $('#click-me').on('click', function(){
 	database.ref('users/'+name).set({
 		chat: chat 
 	});
-	database.ref().set({
-		name: chat
-	});
+	// database.ref().set({
+	// 	name: chat
+	// });
 
 });
 
