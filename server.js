@@ -1,4 +1,6 @@
-var express = require('express');
+var express = require('express')
+, router = express.Router()
+  , multer = require('multer');
 var app = express();
 var server = require('http'). createServer(app);
 var io = require('socket.io').listen(server);
@@ -11,6 +13,15 @@ connections = [];
 server.listen(process.env.PORT || 3000);
 console.log('Server Running');
 console.log(__dirname)
+  
+
+// var uploading = multer({
+//   dest: __dirname + '/public/assets/uploadedImages/',
+// });
+
+// router.post('public/assets/uploadedImages/', uploading, function(req, res) {
+
+// })
 
 
 app.use(express.static("public"));
@@ -54,3 +65,5 @@ io.sockets.on('connection', function(socket) {
 });
 
 module.exports = users;
+
+module.exports = router

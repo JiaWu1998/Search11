@@ -37,7 +37,8 @@ header {
 	text-align: center;
 }
 
-button {
+button,
+#upload-button {
 	font-size: 17px;
 	background-color: #139A43;
 	padding: 5px 10px;
