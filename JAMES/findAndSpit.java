@@ -4,12 +4,11 @@ import java.util.Scanner;
 public class findAndSpit{
   public static void main(String[] args) throws IOException{
     String dirName;
-
+    int length = 0 ;
 
     FileInputStream infoFile = new FileInputStream("/Users/James/Documents/GitHub/Search11/JAMES/dirPage.txt");
     Scanner readInfo = new Scanner(infoFile);
 
-    int[] countKey = readInfo.
 
     while(readInfo.hasNextLine()){
       dirName = readInfo.nextLine();
@@ -60,12 +59,125 @@ try{
 
       }
 
-
-System.out.println(keywordCount);
-
-
+      try{
+      FileOutputStream keywordStat = new FileOutputStream("keywordStatFile.txt",true);
+      PrintWriter write = new PrintWriter(keywordStat);
+      write.println(keywordCount);
+      write.flush();
+      keywordStat.close();
+      }
+      catch(FileNotFoundException e){
+        FileOutputStream keywordStat = new FileOutputStream("keywordStatFile.txt");
+        PrintWriter write = new PrintWriter(keywordStat);
+        write.println(keywordCount);
+        write.flush();
+        keywordStat.close();
+      }
+        length ++;
     }
-
+    compareAndReturn(length);
 
 }
+  public static void compareAndReturn(int len) throws IOException{
+      FileInputStream readFile = new FileInputStream("keywordStatFile.txt");
+      Scanner read = new Scanner(readFile);
+
+      int indexofFirst = 0;
+      int indexofSecond = 0;
+      int indexofThird = 0;
+      int indexofFourth = 0;
+      int indexofFifth = 0;
+
+      int[] keyCountArray = new int[len];
+      int largest = 0;
+
+      for(int i=0; i<len; i++){
+        keyCountArray[i] = read.nextInt();
+      }
+      for(int g=0; g<len; g++){
+        if(largest<keyCountArray[g]){
+          largest = keyCountArray[g];
+          indexofFirst = g;
+        }
+      }
+      largest = 0;
+      for(int g=0; g<len; g++){
+        if((largest<keyCountArray[g])&&(g != indexofFirst)){
+          largest = keyCountArray[g];
+          indexofSecond = g;
+        }
+      }
+      largest = 0;
+      for(int g=0; g<len; g++){
+        if((largest<keyCountArray[g])&&(g != indexofFirst)&&(g != indexofSecond)){
+          largest = keyCountArray[g];
+          indexofThird = g;
+        }
+      }
+      largest = 0;
+      for(int g=0; g<len; g++){
+        if((largest<keyCountArray[g])&&(g != indexofFirst)&&(g != indexofSecond)&&(g != indexofThird)){
+          largest = keyCountArray[g];
+          indexofFourth = g;
+        }
+      }
+      largest = 0;
+      for(int g=0; g<len; g++){
+        if((largest<keyCountArray[g])&&(g != indexofFirst)&&(g != indexofSecond)&&(g != indexofThird)&&(g != indexofFourth)){
+          largest = keyCountArray[g];
+          indexofFifth = g;
+        }
+      }
+      System.out.println("indexofFirst =" + indexofFirst);
+      System.out.println("indexofSecond =" + indexofSecond);
+      System.out.println("indexofThird =" + indexofThird);
+      System.out.println("indexofFourth =" + indexofFourth);
+      System.out.println("indexofFifth =" + indexofFifth);
+
+      FileInputStream infoFile = new FileInputStream("/Users/James/Documents/GitHub/Search11/JAMES/dirPage.txt");
+      Scanner pop = new Scanner(infoFile);
+      String filter = "";
+      String firstDir = "";
+      String secondDir = "";
+      String thirdDir = "";
+      String fourthDir = "";
+      String fifthDir = "";
+      int h = 0;
+
+      String[] dirs = new String[len];
+
+      while(pop.hasNextLine()){
+        dirs[h] = pop.nextLine();
+        h++;
+      }
+
+      for(int i=0;i<len; i++){
+        if (i == indexofFirst){
+          firstDir = dirs[i];
+        }
+        if (i == indexofSecond){
+          secondDir = dirs[i];
+        }
+        if (i == indexofThird){
+          thirdDir = dirs[i];
+        }
+        if (i == indexofFourth){
+          fourthDir = dirs[i];
+        }
+        if (i == indexofFifth){
+          fifthDir = dirs[i];
+        }
+      }
+
+
+      System.out.println(firstDir);
+      System.out.println(secondDir);
+      System.out.println(thirdDir);
+      System.out.println(fourthDir);
+      System.out.println(fifthDir);
+
+      String[] finishDir = {firstDir,secondDir,thirdDir,fourthDir,fifthDir}; 
+
+  }
+
   }
