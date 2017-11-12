@@ -1,9 +1,11 @@
 import os
 import fnmatch
 import shutil
-import gzip
 
-images = ['*.ppt']
+
+new_write = 'c:/Users/Brian/Downloads/scarlet.txt'
+f1 = open(new_write,'wb')
+images = ['*.txt']
 newpath = r'C:/Users/Brian/Documents/hack'
 if not os.path.exists(newpath):
     os.makedirs(newpath)
@@ -19,8 +21,9 @@ if __name__ == '__main__':
     dst = 'C:/Users/Brian/Documents/hack'
     filesToMove = gen_move(images,src)
     for name in filesToMove:
-        shutil.copy(name, dst)
-
+            shutil.copy(name, dst)
+            f1.write(name)
+            f1.write(' ')
 
 
 
